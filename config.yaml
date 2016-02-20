@@ -1,4 +1,4 @@
-baseurl: http://gavinln.github.io/blog-site
+baseurl: http://gavinln.github.io/blog-site/
 languageCode: en-us
 title: My New Hugo Site
 metadataformat: "yaml"
