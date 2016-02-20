@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/</loc>
+    <loc>http://gavinln.github.io/blog-site/</loc>
     <lastmod>2016-02-20T11:09:21-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://replace-this-with-your-hugo-site.com/post/welcome/</loc>
+    <loc>http://gavinln.github.io/blog-site/post/welcome/</loc>
     <lastmod>2016-02-20T11:09:21-08:00</lastmod>
   </url>
   

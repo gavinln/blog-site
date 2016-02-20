@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on My New Hugo Site</title>
-    <link>http://replace-this-with-your-hugo-site.com/post/</link>
+    <link>http://gavinln.github.io/blog-site/post/</link>
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Feb 2016 11:09:21 -0800</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://gavinln.github.io/blog-site/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>welcome</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/welcome/</link>
+      <link>http://gavinln.github.io/blog-site/post/welcome/</link>
       <pubDate>Sat, 20 Feb 2016 11:09:21 -0800</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/welcome/</guid>
+      <guid>http://gavinln.github.io/blog-site/post/welcome/</guid>
       <description>&lt;p&gt;hello, world&lt;/p&gt;
 </description>
     </item>
