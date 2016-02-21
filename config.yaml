@@ -1,6 +1,12 @@
 baseurl: http://gavinln.github.io/blog-site/
 languageCode: en-us
-title: My New Hugo Site
+title: Human Learning Machine Learning
 metadataformat: "yaml"
+
+pygmentsstyle: "default"
+
 theme: "hyde"
+
+params:
+    themeColor: "theme-base-0b"
 ...
