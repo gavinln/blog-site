@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Human Learning Machine Learning</title>
     <link>http://gavinln.github.io/blog-site/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Feb 2016 11:09:21 -0800</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>welcome</title>
+      <title>Welcome</title>
       <link>http://gavinln.github.io/blog-site/post/welcome/</link>
       <pubDate>Sat, 20 Feb 2016 11:09:21 -0800</pubDate>
       
       <guid>http://gavinln.github.io/blog-site/post/welcome/</guid>
-      <description>&lt;p&gt;hello, world&lt;/p&gt;
+      <description>
+
+&lt;p&gt;This web site is created using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; a static web site generator.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png&#34; width=&#34;200&#34; height=&#34;226&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hyde-theme:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Hyde Theme&lt;/h2&gt;
+
+&lt;p&gt;Hyde is an elegant open source and mobile first theme for Hugo. &lt;a href=&#34;https://github.com/spf13/hyde&#34;&gt;Hyde&lt;/a&gt; a
+two column theme that was ported from the theme of the same name made for
+&lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; another static web site generator writen in &lt;a href=&#34;https://www.ruby-lang.org/&#34;&gt;Ruby&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-a-post-using-hugo:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Making a post using Hugo&lt;/h2&gt;
+
+&lt;p&gt;The content in Hugo is organized in sections. To make a new content file called
+&lt;code&gt;welcome.html&lt;/code&gt; in the section &lt;code&gt;post&lt;/code&gt; run the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new post/welcome.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;adding-images:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Adding images&lt;/h2&gt;
+
+&lt;p&gt;To add an image to a markdown document you can use the following three options.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Markdown syntax&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![Hugo](/img/hugo/hugo-logo_small.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HTML syntax&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;/img/hugo/hugo-logo.png&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;226&amp;quot;&lt;/span&gt;/&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Hugo &lt;a href=&#34;https://gohugo.io/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;{{&amp;lt;figure src=&amp;ldquo;/img/hugo/hugo-logo.png&amp;rdquo; width=&amp;ldquo;200&amp;rdquo; height=&amp;ldquo;226&amp;rdquo;&amp;gt;}}&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
