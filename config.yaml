@@ -2,6 +2,7 @@ baseurl: http://gavinln.github.io/blog-site/
 languageCode: en-us
 title: Human Learning Machine Learning
 metadataformat: "yaml"
+canonifyurls: true
 
 pygmentsstyle: "default"
 
