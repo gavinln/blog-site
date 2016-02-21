@@ -7,8 +7,6 @@ This web site is created using [Hugo][10] a static web site generator.
 
 [10]: https://gohugo.io/
 
-<img src="/img/hugo/hugo-logo.png" width="200" height="226"/>
-
 ## Hyde Theme
 
 Hyde is an elegant open source and mobile first theme for Hugo. [Hyde][20] a
