@@ -135,4 +135,4 @@ The static blog created by Hugo can be hosted on Github using
 
 ## Access your blog
 
-The blog will be available at `http://gavinln.github.io/blog-site`
+The blog will be available at `<http://gavinln.github.io/blog-site>`
