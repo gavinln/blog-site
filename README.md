@@ -132,3 +132,7 @@ The static blog created by Hugo can be hosted on Github using
     ```
     git subtree push --prefix=public git@github.com:gavinln/blog-site.git gh-pages
     ```
+
+## Access your blog
+
+The blog will be available at `http://gavinln.github.io/blog-site`
