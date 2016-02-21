@@ -14,7 +14,6 @@ The [instructions][30] below can be used to create a Hugo web site.
 [30]: http://gohugo.io/overview/introduction
 
 1. Create a new hugo site
-
     ```
     hugo new site --format yaml hugo
     ```
