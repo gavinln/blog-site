@@ -6,8 +6,108 @@
     <description>Recent content in Posts on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Feb 2016 11:09:21 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 23 Feb 2016 19:11:35 -0800</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PCA with Scikit learn on the Fisher Iris data set</title>
+      <link>http://gavinln.github.io/blog-site/post/scikit-pca-iris/</link>
+      <pubDate>Tue, 23 Feb 2016 19:11:35 -0800</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/scikit-pca-iris/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://scikit-learn.org/&#34;&gt;Scikit learn&lt;/a&gt; has multiple data sets included with the library. One of the most
+well known data sets is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Iris_flower_data_set&#34;&gt;Iris data set&lt;/a&gt; introduced by Ronald Fisher.&lt;/p&gt;
+
+&lt;p&gt;Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. Sepals are usually green and typically function as protection for the flower in bud, and often as support for the petals when in bloom. Based on the combination of these four features the goal is to distinguish between three species of Iris (Iris setosa, Iris virginica and Iris versicolor).&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_setosa.jpg&#34; width=&#34;300&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Iris setosa&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_virginica.jpg&#34; width=&#34;300&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Iris virginica&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_versicolor.jpg&#34; width=&#34;300&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Iris versicolor&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The data is shown in a Jupyter (IPython) notebook in this &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/sklearn-quickstart.ipynb&#34;&gt;repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By converting the scikit-learn data into a &lt;a href=&#34;http://pandas.pydata.org/&#34;&gt;pandas&lt;/a&gt; dataframe it can easily be
+plotted using the &lt;a href=&#34;http://stanford.edu/~mwaskom/software/seaborn/&#34;&gt;seaborn&lt;/a&gt; library.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-pairplot.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Seaborn iris plot&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Using principal component analysis the four dimensional data set into a two
+dimensional data set by only choosing the first two principal components.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sklearn.decomposition&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; PCA
+pca &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; PCA(n_components&lt;span style=&#34;color: #666666&#34;&gt;=2&lt;/span&gt;)
+iris_proj &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; pca&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fit_transform(iris[&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;])
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt;(iris[&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;shape)
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt;(iris_proj&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;shape)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first principal component explains 92.46% of the variance and the second
+explains 5.30% of the variance.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;First two principal components of the Iris data&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Welcome</title>

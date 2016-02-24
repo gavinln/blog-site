@@ -136,3 +136,28 @@ The static blog created by Hugo can be hosted on Github using
 ## Access your blog
 
 The blog will be available at <http://gavinln.github.io/blog-site>
+
+## Run the local hugo server
+
+1. Change to the blog-site directory
+    ```
+    cd blog-site
+    ```
+
+2. Run the server
+    ```
+    ./run-esrver.sh
+    ```
+
+## Create a new post
+
+1. Change to the blog-site directory
+    ```
+    cd blog-site
+    ```
+
+2. Create a new post Run the server
+    ```
+    hugo new post/scikit-pca-iris.md
+    ```
+

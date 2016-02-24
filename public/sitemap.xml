@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://gavinln.github.io/blog-site/</loc>
-    <lastmod>2016-02-20T11:09:21-08:00</lastmod>
+    <lastmod>2016-02-23T19:11:35-08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gavinln.github.io/blog-site/post/scikit-pca-iris/</loc>
+    <lastmod>2016-02-23T19:11:35-08:00</lastmod>
   </url>
   
   <url>
