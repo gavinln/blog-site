@@ -17,11 +17,12 @@
       <guid>http://gavinln.github.io/blog-site/post/scikit-logistic_reg-iris/</guid>
       <description>&lt;p&gt;The [Iris data set][10] has four feature for Iris flower.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;* sepal length
-* sepal width
-* petal length
-* petal width
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;sepal length&lt;/li&gt;
+&lt;li&gt;sepal width&lt;/li&gt;
+&lt;li&gt;petal length&lt;/li&gt;
+&lt;li&gt;petal width&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Using a three class logistic regression the four features are used to classify
 the flowers into three species (Iris setosa, Iris virginica, Iris versicolor).&lt;/p&gt;
