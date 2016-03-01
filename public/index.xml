@@ -83,7 +83,7 @@ classify the species. The mis-predicted values are shown below.&lt;/p&gt;
 features are easier to use to separate the species than others.&lt;/p&gt;
 
 &lt;p&gt;Logistic regression can also be used on the two principal components and
-mis-predict only five values.&lt;/p&gt;
+mis-predicts five specimens.&lt;/p&gt;
 
 
 &lt;figure &gt;

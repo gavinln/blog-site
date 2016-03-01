@@ -1,10 +1,8 @@
 ---
 Description: "Logistic regression with Scikit learn on the Iris data"
 date: 2016-02-29T21:30:18-08:00
-menu: main
 title: Logistic regression on the Iris data set
 ---
-
 The [Iris data set][10] has four feature for Iris flower.
 
 [10]: https://en.wikipedia.org/wiki/Iris_flower_data_set
@@ -38,7 +36,7 @@ The previous [post](/post/scikit-pca-iris/) shows that some combinations of
 features are easier to use to separate the species than others.
 
 Logistic regression can also be used on the two principal components and
-mis-predict only five values.
+mis-predicts five specimens.
 
 {{<figure src="/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" title="Seaborn iris plot with mis-predicted items" width="800">}}
 
