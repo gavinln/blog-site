@@ -2,7 +2,7 @@
 Description: "Principal component analysis (PCA) with Scikit learn on the Iris
 data"
 date: 2016-02-23T19:11:35-08:00
-title: PCA with Scikit learn on the Fisher Iris data set
+title: PCA with Scikit learn on the Iris data set
 ---
 
 [Scikit learn][10] has multiple data sets included with the library. One of the most
