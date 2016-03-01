@@ -79,7 +79,7 @@ plotted using the &lt;a href=&#34;http://stanford.edu/~mwaskom/software/seaborn/
 &lt;/figure&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Using principal component analysis (PCA) the four dimensional data can be
+&lt;p&gt;Using principal component analysis (PCA) the four dimensional data set can be
 converted into a two dimensional data set by only choosing the first two
 principal components.&lt;/p&gt;
 
