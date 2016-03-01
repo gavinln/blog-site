@@ -29,8 +29,9 @@ plotted using the [seaborn][50] library.
 
 {{<figure src="/img/irises/seaborn-iris-pairplot.png" title="Seaborn iris plot" width="800">}}
 
-Using principal component analysis the four dimensional data set into a two
-dimensional data set by only choosing the first two principal components.
+Using principal component analysis (PCA) the four dimensional data can be
+converted into a two dimensional data set by only choosing the first two
+principal components.
 
 {{<highlight python>}}
 from sklearn.decomposition import PCA

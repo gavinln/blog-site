@@ -161,7 +161,7 @@ The blog will be available at <http://gavinln.github.io/blog-site>
     cd blog-site
     ```
 
-2. Create a new post Run the server
+2. Create a new post
     ```
     hugo new post/scikit-pca-iris.md
     ```
