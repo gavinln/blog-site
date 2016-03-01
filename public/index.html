@@ -60,7 +60,7 @@
 
     <span class="post-date">Mon, Feb 29, 2016</span>
 
-    <p>The [Iris data set][10] has four feature for Iris flower.</p>
+    <p>The <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris data set</a> has four feature for Iris flower.</p>
 
 <ul>
 <li>sepal length</li>
@@ -69,9 +69,97 @@
 <li>petal width</li>
 </ul>
 
-<p>Using a three class <a href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html">logistic regression</a> the four features are used to
+<p>Using a three class <a href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html">logistic regression</a> the four features can be used to
 classify the flowers into three species (Iris setosa, Iris virginica,
 Iris versicolor).</p>
+
+<p>Using this Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/02_Iris_dataset_logistic_regression.ipynb">notebook</a> combinations of two features we are used to
+classify the species. The mis-predicted values are shown below.</p>
+
+<table>
+<thead>
+<tr>
+<th>measure 1</th>
+<th>measure 2</th>
+<th>incorrect predictions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sepal length</td>
+<td>sepal width</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal length</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal width</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal length</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal width</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>petal length</td>
+<td>petal width</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>The previous <a href="http://gavinln.github.io/blog-site/post/scikit-pca-iris/">post</a> shows that some combinations of
+features are easier to use to separate the species than others.</p>
+
+<p>Logistic regression can also be used on the two principal components and
+mis-predict only five values.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Seaborn iris plot with mis-predicted items</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>A mesh when drawn over the plot shows the three classes of the logistic
+regression.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Seaborn iris plot - logistic regression</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
 
   </div>
   
