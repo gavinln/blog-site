@@ -15,7 +15,7 @@
       <pubDate>Mon, 29 Feb 2016 21:30:18 -0800</pubDate>
       
       <guid>http://gavinln.github.io/blog-site/post/scikit-logistic_reg-iris/</guid>
-      <description>&lt;p&gt;The [Iris data set][10] has four feature for Iris flower.&lt;/p&gt;
+      <description>&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Iris_flower_data_set&#34;&gt;Iris data set&lt;/a&gt; has four feature for Iris flower.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;sepal length&lt;/li&gt;
@@ -24,9 +24,97 @@
 &lt;li&gt;petal width&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Using a three class &lt;a href=&#34;http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html&#34;&gt;logistic regression&lt;/a&gt; the four features are used to
+&lt;p&gt;Using a three class &lt;a href=&#34;http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html&#34;&gt;logistic regression&lt;/a&gt; the four features can be used to
 classify the flowers into three species (Iris setosa, Iris virginica,
 Iris versicolor).&lt;/p&gt;
+
+&lt;p&gt;Using this Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/02_Iris_dataset_logistic_regression.ipynb&#34;&gt;notebook&lt;/a&gt; combinations of two features we are used to
+classify the species. The mis-predicted values are shown below.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;measure 1&lt;/th&gt;
+&lt;th&gt;measure 2&lt;/th&gt;
+&lt;th&gt;incorrect predictions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sepal length&lt;/td&gt;
+&lt;td&gt;sepal width&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sepal length&lt;/td&gt;
+&lt;td&gt;petal length&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sepal length&lt;/td&gt;
+&lt;td&gt;petal width&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sepal width&lt;/td&gt;
+&lt;td&gt;petal length&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;sepal width&lt;/td&gt;
+&lt;td&gt;petal width&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;petal length&lt;/td&gt;
+&lt;td&gt;petal width&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The previous &lt;a href=&#34;http://gavinln.github.io/blog-site/post/scikit-pca-iris/&#34;&gt;post&lt;/a&gt; shows that some combinations of
+features are easier to use to separate the species than others.&lt;/p&gt;
+
+&lt;p&gt;Logistic regression can also be used on the two principal components and
+mis-predict only five values.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components-mis-predicted.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Seaborn iris plot with mis-predicted items&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;A mesh when drawn over the plot shows the three classes of the logistic
+regression.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Seaborn iris plot - logistic regression&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
 </description>
     </item>
     
