@@ -38,12 +38,12 @@ features are easier to use to separate the species than others.
 Logistic regression can also be used on the two principal components and
 mis-predicts five specimens.
 
-{{<figure src="/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" title="Seaborn iris plot with mis-predicted items" width="800">}}
+{{<figure src="/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" title="Iris plot with mis-predicted items" width="800">}}
 
 A mesh when drawn over the plot shows the three classes of the logistic
 regression.
 
-{{<figure src="/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" title="Seaborn iris plot - logistic regression" width="800">}}
+{{<figure src="/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" title="Iris plot - logistic regression" width="800">}}
 
 
 
