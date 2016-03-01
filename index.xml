@@ -92,7 +92,7 @@ mis-predicts five specimens.&lt;/p&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Seaborn iris plot with mis-predicted items&lt;/h4&gt;
+        &lt;h4&gt;Iris plot with mis-predicted items&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -109,7 +109,7 @@ regression.&lt;/p&gt;
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Seaborn iris plot - logistic regression&lt;/h4&gt;
+        &lt;h4&gt;Iris plot - logistic regression&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
