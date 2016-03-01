@@ -7,6 +7,11 @@ language.
 [10]: https://gohugo.io/
 [20]: https://golang.org/
 
+## Hugo installation
+
+The Hugo installation is in the `ansible_vm` project. The `blog-site` project
+is shared as a `/blog-site` folder.
+
 ## Create a Hugo site
 
 The [instructions][30] below can be used to create a Hugo web site.
@@ -146,7 +151,7 @@ The blog will be available at <http://gavinln.github.io/blog-site>
 
 2. Run the server
     ```
-    ./run-esrver.sh
+    ./run-server.sh
     ```
 
 ## Create a new post
