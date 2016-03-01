@@ -60,9 +60,7 @@ well known data sets is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Iris_f
 &lt;/figure&gt;
 &lt;/p&gt;
 
-&lt;p&gt;The data is shown in a Jupyter (IPython) notebook in this [repository][30].&lt;/p&gt;
-
-&lt;p&gt;[30]: &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01&#34;&gt;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01&lt;/a&gt; Iris dataset PCA.ipynb&lt;/p&gt;
+&lt;p&gt;The data is shown in a Jupyter (IPython) notebook in this &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01_Iris_dataset_PCA.ipynb&#34;&gt;repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;By converting the scikit-learn data into a &lt;a href=&#34;http://pandas.pydata.org/&#34;&gt;pandas&lt;/a&gt; dataframe it can easily be
 plotted using the &lt;a href=&#34;http://stanford.edu/~mwaskom/software/seaborn/&#34;&gt;seaborn&lt;/a&gt; library.&lt;/p&gt;
