@@ -18,7 +18,12 @@
       <description>&lt;p&gt;&lt;a href=&#34;http://scikit-learn.org/&#34;&gt;Scikit learn&lt;/a&gt; has multiple data sets included with the library. One of the most
 well known data sets is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Iris_flower_data_set&#34;&gt;Iris data set&lt;/a&gt; introduced by Ronald Fisher.&lt;/p&gt;
 
-&lt;p&gt;Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. Sepals are usually green and typically function as protection for the flower in bud, and often as support for the petals when in bloom. Based on the combination of these four features the goal is to distinguish between three species of Iris (Iris setosa, Iris virginica and Iris versicolor).&lt;/p&gt;
+&lt;p&gt;Four features were measured from each sample: the length and the width of the
+sepals and petals, in centimetres. Sepals are usually green and typically
+function as protection for the flower in bud, and often as support for the
+petals when in bloom. Based on the combination of these four features the
+goal is to distinguish between three species of Iris
+(Iris setosa, Iris virginica and Iris versicolor).&lt;/p&gt;
 
 &lt;p&gt;
 &lt;figure &gt;
