@@ -19,7 +19,7 @@ Four features were measured from each sample: the length and the width of the se
 
 The data is shown in a Jupyter (IPython) notebook in this [repository][30].
 
-[30]: https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01 Iris dataset PCA.ipynb
+[30]: https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01_Iris_dataset_PCA.ipynb
 
 By converting the scikit-learn data into a [pandas][40] dataframe it can easily be
 plotted using the [seaborn][50] library.
