@@ -24,8 +24,9 @@
 &lt;li&gt;petal width&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Using a three class logistic regression the four features are used to classify
-the flowers into three species (Iris setosa, Iris virginica, Iris versicolor).&lt;/p&gt;
+&lt;p&gt;Using a three class &lt;a href=&#34;http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html&#34;&gt;logistic regression&lt;/a&gt; the four features are used to
+classify the flowers into three species (Iris setosa, Iris virginica,
+Iris versicolor).&lt;/p&gt;
 </description>
     </item>
     

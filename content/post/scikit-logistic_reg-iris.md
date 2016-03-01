@@ -12,8 +12,11 @@ The [Iris data set][10] has four feature for Iris flower.
 * petal length
 * petal width
 
-Using a three class logistic regression the four features are used to classify
-the flowers into three species (Iris setosa, Iris virginica, Iris versicolor).
+Using a three class [logistic regression][20] the four features are used to
+classify the flowers into three species (Iris setosa, Iris virginica,
+Iris versicolor).
+
+[20]: http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html
 
 
 
