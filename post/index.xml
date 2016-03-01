@@ -6,11 +6,30 @@
     <description>Recent content in Posts on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Feb 2016 19:11:35 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Feb 2016 21:30:18 -0800</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>PCA with Scikit learn on the Fisher Iris data set</title>
+      <title>Logistic regression on the Iris data set</title>
+      <link>http://gavinln.github.io/blog-site/post/scikit-logistic_reg-iris/</link>
+      <pubDate>Mon, 29 Feb 2016 21:30:18 -0800</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/scikit-logistic_reg-iris/</guid>
+      <description>&lt;p&gt;The [Iris data set][10] has four feature for Iris flower.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* sepal length
+* sepal width
+* petal length
+* petal width
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using a three class logistic regression the four features are used to classify
+the flowers into three species (Iris setosa, Iris virginica, Iris versicolor).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PCA with Scikit learn on the Iris data set</title>
       <link>http://gavinln.github.io/blog-site/post/scikit-pca-iris/</link>
       <pubDate>Tue, 23 Feb 2016 19:11:35 -0800</pubDate>
       
