@@ -3,7 +3,7 @@ Description: "Logistic regression with Scikit learn on the Iris data"
 date: 2016-02-29T21:30:18-08:00
 title: Logistic regression on the Iris data set
 ---
-The [Iris data set][10] has four feature for Iris flower.
+The [Iris data set][10] has four features for Iris flower.
 
 [10]: https://en.wikipedia.org/wiki/Iris_flower_data_set
 
