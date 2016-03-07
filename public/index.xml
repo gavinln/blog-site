@@ -6,8 +6,119 @@
     <description>Recent content on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Feb 2016 21:30:18 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Mar 2016 12:04:12 -0800</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Support vector machines with Scikit learn</title>
+      <link>http://gavinln.github.io/blog-site/post/scikit-svm/</link>
+      <pubDate>Sun, 06 Mar 2016 12:04:12 -0800</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/scikit-svm/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Support_vector_machine&#34;&gt;Support vector machines&lt;/a&gt; are supervised learning models used for
+classification and regression. For a classifier the data is represented as
+points in space and a SVM classifier (SVC) separates the classes by a gap that
+is as wide as possible. SVM algorithms are known as maximum margin classifiers.&lt;/p&gt;
+
+&lt;p&gt;To illustrate the SVC algorithm we generate random points in two dimensions
+arranged in two clusters. This is illustrated in a Jupyter (IPython) notebook
+in this &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/03_Support_vector_machines.ipynb&#34;&gt;repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;X, y &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; make_blobs(n_samples&lt;span style=&#34;color: #666666&#34;&gt;=50&lt;/span&gt;, centers&lt;span style=&#34;color: #666666&#34;&gt;=2&lt;/span&gt;, random_state&lt;span style=&#34;color: #666666&#34;&gt;=0&lt;/span&gt;, cluster_std&lt;span style=&#34;color: #666666&#34;&gt;=0.60&lt;/span&gt;)
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sklearn.svm&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; SVC
+clf &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; SVC(kernel&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;linear&amp;#39;&lt;/span&gt;)
+clf&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fit(X, y)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/linear_boundaries_two_clusters.png&#34; width=&#34;500&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Two lines separating two clusters&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Multiple lines can be drawn to separate the clusters. The black line is
+preferred to the red line as there is a larger margin between it and the
+nearest points.&lt;/p&gt;
+
+&lt;p&gt;Some of the points nearest the boundary are known as support vectors. They
+margins and the support vectors are plotted below.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM_decision_function-margin-support_vectors.png&#34; width=&#34;500&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Support vectors&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Support vector classifiers are linear classifiers. For datasets that are not
+linearly separable they do a poor job.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM-non_linearly_separable_data.png&#34; width=&#34;500&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Non-linearly separable data&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To create non-linear boundaries we could convert this two dimensional data set
+to higher dimensions. For example we could add the distance of the points from
+the origin as the third dimension. The two clusters will then be easily
+separable.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM-with_radial_basis_functions.png&#34; width=&#34;500&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Radial basis functions for SVC&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Another example with non-linearly separable data.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/radial_basis_functions-non_linearly_separable_data.png&#34; width=&#34;500&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Radial basis functions for SVC&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Logistic regression on the Iris data set</title>
