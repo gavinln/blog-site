@@ -6,8 +6,96 @@
     <description>Recent content on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Mar 2016 12:04:12 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Mar 2016 14:27:21 -0700</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Decision trees on the Iris data set</title>
+      <link>http://gavinln.github.io/blog-site/post/decision-trees-scikit/</link>
+      <pubDate>Sun, 13 Mar 2016 14:27:21 -0700</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/decision-trees-scikit/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Decision_tree&#34;&gt;Decision trees&lt;/a&gt; are a non-parametric learning method used for &lt;a href=&#34;https://en.wikipedia.org/wiki/Statistical_classification&#34;&gt;classification&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Regression_analysis&#34;&gt;regression&lt;/a&gt;. Trees are often represented with a graph like model where each note is a test and each branch represents the outcome of the test.&lt;/p&gt;
+
+&lt;p&gt;We use the &lt;a href=&#34;https://en.wikipedia.org/wiki/Iris_flower_data_set&#34;&gt;Iris data set&lt;/a&gt; to demonstrate the use of a decision tree classifier.&lt;/p&gt;
+
+&lt;p&gt;The Iris data set has four features (sepal length, sepal width, petal length, petal width) which can be used to classify Iris flowers into three species denoted as &amp;ldquo;0&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;2&amp;rdquo; (setosa, versicolor, virginica).&lt;/p&gt;
+
+&lt;p&gt;This Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/04_Decision_trees.ipynb&#34;&gt;notebook&lt;/a&gt; contains all the code used to plot the charts.&lt;/p&gt;
+
+&lt;p&gt;To better display the performance of the decision trees algorithm we predict
+the species of Iris using just two features: petal length and petal width. The
+species are shown in a scatter plot in different colors.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_species-petal_length-petal_width.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The output of the decision tree is shown using shaded regions that match the colors used to identify the flower. Using a decision tree with various depths the three species of Iris are classified, ineffectively at first with a tree of only one layer. As the number of layers increase the decision tree does a better job identifying the Iris species.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/decision_trees-multiple_depths.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Decision trees classification boundaries&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The decision tree rules can also be represented using a graph like drawing with the root node on the left and the leaf nodes on the right.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/tree-depth-1.png&#34; width=&#34;400&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/tree-depth-2.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/tree-depth-3.png&#34; width=&#34;800&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Finally we use a decision tree without limiting the depth. It classifies all the flowers correctly.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/decision_trees-unlimited_depth.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Support vector machines with Scikit learn</title>
