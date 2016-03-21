@@ -6,8 +6,72 @@
     <description>Recent content in Posts on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Mar 2016 14:27:21 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 20 Mar 2016 22:18:21 -0700</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Random forests using Scikit-learn</title>
+      <link>http://gavinln.github.io/blog-site/post/scikit-random-forests/</link>
+      <pubDate>Sun, 20 Mar 2016 22:18:21 -0700</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/scikit-random-forests/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Random_forest&#34;&gt;Random forests&lt;/a&gt; is an &lt;a href=&#34;https://en.wikipedia.org/wiki/Ensemble_learning&#34;&gt;ensemble learning&lt;/a&gt; method. Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained for any of the constituent learning algorithms.&lt;/p&gt;
+
+&lt;p&gt;Random forests work by constructing multiple decision trees and combining the trees. The algorithm was developed by &lt;a href=&#34;https://en.wikipedia.org/wiki/Leo_Breiman&#34;&gt;Leo Breiman&lt;/a&gt; and Adele Cutler and &amp;ldquo;Random Forests&amp;rdquo; is their trademark.&lt;/p&gt;
+
+&lt;p&gt;Random forests correct for decision trees&amp;rsquo; habit of overfitting to their training data set.&lt;/p&gt;
+
+&lt;p&gt;This Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/05_Random_Forests.ipynb&#34;&gt;notebook&lt;/a&gt; contains all the code used to plot the charts.&lt;/p&gt;
+
+&lt;p&gt;To demonstrate the tendency of decision trees to overfit the data we predict the species of Iris using just two features: sepal length and petal width. The species are shown in a scatter plot in different colors.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_species-sepal_length-petal_width.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The graphs below show three Iris species using three different colors and the shaded regions predicted by the decision tree using lighter shades of the same colors. Each of the three plots in the set uses a different random sample made up of 70% of the data set. The decision tree boundaries are differnt in each case. This is an indication of overfitting.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/random_forests/decision_trees-iris-multiple_subsets.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;A similar plot shows a Random Forest Classifier with 500 trees each time used to select various sub-samples of the dataset. This controls over-fitting.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/random_forests/random_forests-iris-multiple_subsets.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Decision trees on the Iris data set</title>

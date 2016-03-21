@@ -1,0 +1,114 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.15" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Random forests using Scikit-learn &middot; Human Learning Machine Learning </title>
+
+  
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/poole.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/syntax.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://gavinln.github.io/blog-site/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://gavinln.github.io/blog-site/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Human Learning Machine Learning" />
+</head>
+
+	<body class="theme-base-0b">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://gavinln.github.io/blog-site/"><h1>Human Learning Machine Learning</h1></a>
+      <p class="lead">
+	Posts about Machine learning.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://gavinln.github.io/blog-site/">Home</a> </li>
+      
+      <li><a href="http://gavinln.github.io/blog-site/post">Index</a> </li>
+    </ul>
+
+    <p>&copy; 2016. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Random forests using Scikit-learn</h1>
+			  <span class="post-date">Sun, Mar 20, 2016</span>
+			      <p><a href="https://en.wikipedia.org/wiki/Random_forest">Random forests</a> is an <a href="https://en.wikipedia.org/wiki/Ensemble_learning">ensemble learning</a> method. Ensemble methods use multiple learning algorithms to obtain better predictive performance than could be obtained for any of the constituent learning algorithms.</p>
+
+<p>Random forests work by constructing multiple decision trees and combining the trees. The algorithm was developed by <a href="https://en.wikipedia.org/wiki/Leo_Breiman">Leo Breiman</a> and Adele Cutler and &ldquo;Random Forests&rdquo; is their trademark.</p>
+
+<p>Random forests correct for decision trees&rsquo; habit of overfitting to their training data set.</p>
+
+<p>This Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/05_Random_Forests.ipynb">notebook</a> contains all the code used to plot the charts.</p>
+
+<p>To demonstrate the tendency of decision trees to overfit the data we predict the species of Iris using just two features: sepal length and petal width. The species are shown in a scatter plot in different colors.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/iris_species-sepal_length-petal_width.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Scatter plot of Iris species</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>The graphs below show three Iris species using three different colors and the shaded regions predicted by the decision tree using lighter shades of the same colors. Each of the three plots in the set uses a different random sample made up of 70% of the data set. The decision tree boundaries are differnt in each case. This is an indication of overfitting.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/random_forests/decision_trees-iris-multiple_subsets.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Scatter plot of Iris species</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>A similar plot shows a Random Forest Classifier with 500 trees each time used to select various sub-samples of the dataset. This controls over-fitting.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/random_forests/random_forests-iris-multiple_subsets.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Scatter plot of Iris species</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>
