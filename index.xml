@@ -6,8 +6,63 @@
     <description>Recent content on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Mar 2016 22:18:21 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 27 Mar 2016 23:17:09 -0700</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>K nearest neighbors using Scikit-learn</title>
+      <link>http://gavinln.github.io/blog-site/post/k_nearest_neighbors/</link>
+      <pubDate>Sun, 27 Mar 2016 23:17:09 -0700</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/k_nearest_neighbors/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm&#34;&gt;k-nearest neighbors&lt;/a&gt; algorithm is one of the simplest algorithms for machine learning. It is a non-parametric method used for both classification and regression.&lt;/p&gt;
+
+&lt;p&gt;In a classification problem an object is classified by a majority vote of its neighbors. Typically k is a small positive integer. If k = 1, the object is assigned to be the class of the nearest neighbor. If k = 3 the object is assigned to be in the class of the nearest 2 neighbors and so on for different values of k.&lt;/p&gt;
+
+&lt;p&gt;In a regression problem, the property of the object is assigned a value that is the average of the values of its k nearest neighbors.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://scikit-learn.org/stable/modules/neighbors.html&#34;&gt;Scikit-learn&lt;/a&gt; library module KNeighborsClassifier demonstrates the use
+of the k-nearest neighbor algorithm for classification.&lt;/p&gt;
+
+&lt;p&gt;This Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/06_K_nearest_neighbors.ipynb&#34;&gt;notebook&lt;/a&gt; contains all the code used to plot the charts.&lt;/p&gt;
+
+&lt;p&gt;The Iris data set has four features (sepal length, sepal width, petal length, petal width) which can be used to classify Iris flowers into three species denoted as &amp;ldquo;0&amp;rdquo;, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;2&amp;rdquo; (setosa, versicolor, virginica).&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/iris_species-sepal_length-petal_width.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The K-nearest neighbors classifier is used to predict the species by using just two features: &amp;ldquo;sepal length&amp;rdquo; and &amp;ldquo;petal width&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The graphs below show the predictions of the k-nearest neighbors algorithm using three different values for the number of nearest neighbors.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/k_nearest_neighbors/iris_multiple_values_k_nearest_neighbors.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Using k-nearest neighbors to predict Iris species&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;When the k value is small (like the graph on the left) the decision boundary is relatively complex and even though the algorithm predicts the training data well, it is likely over-fitting the data and fair poorly on a new sample. For a very high value of k (like the graph on the right) the method the decision boundary is simpler and likely to under-fit the training data.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Random forests using Scikit-learn</title>
@@ -19,7 +74,7 @@
 
 &lt;p&gt;Random forests work by constructing multiple decision trees and combining the trees. The algorithm was developed by &lt;a href=&#34;https://en.wikipedia.org/wiki/Leo_Breiman&#34;&gt;Leo Breiman&lt;/a&gt; and Adele Cutler and &amp;ldquo;Random Forests&amp;rdquo; is their trademark.&lt;/p&gt;
 
-&lt;p&gt;Random forests correct for decision trees&amp;rsquo; habit of overfitting to their training data set.&lt;/p&gt;
+&lt;p&gt;Random forests correct for decision trees&amp;rsquo; habit of over-fitting to their training data set.&lt;/p&gt;
 
 &lt;p&gt;This Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/05_Random_Forests.ipynb&#34;&gt;notebook&lt;/a&gt; contains all the code used to plot the charts.&lt;/p&gt;
 
@@ -39,7 +94,7 @@
 &lt;/figure&gt;
 
 
-&lt;p&gt;The graphs below show three Iris species using three different colors and the shaded regions predicted by the decision tree using lighter shades of the same colors. Each of the three plots in the set uses a different random sample made up of 70% of the data set. The decision tree boundaries are differnt in each case. This is an indication of overfitting.&lt;/p&gt;
+&lt;p&gt;The graphs below show three Iris species using three different colors and the shaded regions predicted by the decision tree using lighter shades of the same colors. Each of the three plots in the set uses a different random sample made up of 70% of the data set. The decision tree boundaries are different in each case. This is an indication of over-fitting.&lt;/p&gt;
 
 
 &lt;figure &gt;
@@ -48,7 +103,7 @@
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        &lt;h4&gt;Using decision trees to predict Iris species&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
@@ -64,7 +119,7 @@
     
     
     &lt;figcaption&gt;
-        &lt;h4&gt;Scatter plot of Iris species&lt;/h4&gt;
+        &lt;h4&gt;Using Random Forests to predict Iris species&lt;/h4&gt;
         
     &lt;/figcaption&gt;
     
