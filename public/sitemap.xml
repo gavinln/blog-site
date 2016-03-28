@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://gavinln.github.io/blog-site/</loc>
-    <lastmod>2016-03-20T22:18:21-07:00</lastmod>
+    <lastmod>2016-03-27T23:17:09-07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gavinln.github.io/blog-site/post/k_nearest_neighbors/</loc>
+    <lastmod>2016-03-27T23:17:09-07:00</lastmod>
   </url>
   
   <url>
