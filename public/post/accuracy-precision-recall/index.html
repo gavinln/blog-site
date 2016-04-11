@@ -1,0 +1,185 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.15" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Accuracy, precision, recall for machine learning &middot; Human Learning Machine Learning </title>
+
+  
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/poole.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/syntax.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://gavinln.github.io/blog-site/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://gavinln.github.io/blog-site/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Human Learning Machine Learning" />
+</head>
+
+	<body class="theme-base-0b">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://gavinln.github.io/blog-site/"><h1>Human Learning Machine Learning</h1></a>
+      <p class="lead">
+	Posts about Machine learning.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://gavinln.github.io/blog-site/">Home</a> </li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/accuracy-precision-recall/"> Accuracy, precision, recall for machine learning </a></li>
+      
+      <li><a href="http://gavinln.github.io/blog-site/post">Index</a> </li>
+    </ul>
+
+    <p>&copy; 2016. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Accuracy, precision, recall for machine learning</h1>
+			  <span class="post-date">Sun, Apr 10, 2016</span>
+			      <p>A popular way to evaluate the performance of a machine learning algorithm is to use a <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>. This is a table with two rows and two columns that displays the number of true positives, false positives, false negatives and true negatives.</p>
+
+<p>This Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/07_Precision_and_Recall.ipynb">notebook</a> contains all the code used to plot the charts.</p>
+
+<p>The table below shows an example confusion matrix for a hypothetical test for a rare disease where only 2 people of out 100 have the disease. This is an unbalanced data set as a much larger number, 98 out of 100 do not have the disease. The first named row has cases of people who have the disease and the second named row has cases of people who do not have the disease. The first named column has people who test positive and the second named column has people who test negative.</p>
+
+<p>This leads to four numeric cell with the top left containing true positive counts, the bottom left having false positive, the top right having false negative and the bottom right with true negative counts.</p>
+
+<p>A simple way to create a very accurate test for this unbalanced example is to just assume everyone tests negative for the disease. This misses out on all the people who do actually have the disease and results in two false negative cases. However it correctly predicts 98 true negative cases. This results in a 98% accurate test. But this test cannot distinguish between people who have a disease and people who don&rsquo;t. Accuracy may not be a useful measure of the goodness of the test.</p>
+
+<p>Two useful measures are precision and recall: Precision is a measure of how many of the selected items are relevant and recall is a measure of how many relevant items are selected.</p>
+
+<p>precision = (true positives)/(true positives + false positives)</p>
+
+<p>recall = (True positives)/positives</p>
+
+<p>In the example below the precision is undefined while the recall is zero.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right">predicted condition positive</th>
+<th align="right">predicted condition negative</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>true condition positive</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+
+<tr>
+<td>true condition negative</td>
+<td align="right">0</td>
+<td align="right">98</td>
+</tr>
+</tbody>
+</table>
+
+<p>An alternative test for the same rare disease where 2 out of 100 have the disease is show below. Now there is 1 true positive, 2 false positives, 1 false negative and 96 true negatives.</p>
+
+<p>This test has a lower accuracy as it has correct predicted 97 out of 100 cases, lower than the previous test. This test also has a defined precision of 0.333333 and a recall of 0.5</p>
+
+<p>This test correctly identifies 1 out of the 2 people who have the disease.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right">predicted condition positive</th>
+<th align="right">predicted condition negative</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>true condition positive</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+
+<tr>
+<td>true condition negative</td>
+<td align="right">2</td>
+<td align="right">96</td>
+</tr>
+</tbody>
+</table>
+
+<p>To demonstrate the use of accuracy, precision and recall when measuring the peformance of a classifier, we use the &ldquo;Wisconsin Breast Cancer&rdquo; data set.</p>
+
+<p>This data set has 569 samples of which 357 are benign and 212 are malignant</p>
+
+<p>We predict whether the cancer is benign or malignant using ten factors: radius, texture, perimeter, area, smoothness, compactness, concavity, concave points, symmetry and fractal dimension.</p>
+
+<p>We compare four classifiers: logistic regression, support vector, decision tree and random forests on three different measures, accuracy, precision and recall. The decision tree and random forest classifiers are so good that they correctly classify 100% of the samples in this data set.</p>
+
+<table>
+<thead>
+<tr>
+<th>classifier</th>
+<th align="right">accuracy</th>
+<th align="right">precision</th>
+<th align="right">recall</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>logistic regression</td>
+<td align="right">0.929701</td>
+<td align="right">0.927224</td>
+<td align="right">0.963585</td>
+</tr>
+
+<tr>
+<td>support vector (radial basis)</td>
+<td align="right">0.987698</td>
+<td align="right">0.980769</td>
+<td align="right">1</td>
+</tr>
+
+<tr>
+<td>decision tree</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+
+<tr>
+<td>random forest</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>However the performance of a classifier on the training data is not necessarily
+a good indication of how well it will do on data it has not seen. In future
+posts the classifiers will be tested on new data.</p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

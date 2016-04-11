@@ -6,8 +6,141 @@
     <description>Recent content on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Mar 2016 23:17:09 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 10 Apr 2016 22:40:36 -0700</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Accuracy, precision, recall for machine learning</title>
+      <link>http://gavinln.github.io/blog-site/post/accuracy-precision-recall/</link>
+      <pubDate>Sun, 10 Apr 2016 22:40:36 -0700</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/accuracy-precision-recall/</guid>
+      <description>&lt;p&gt;A popular way to evaluate the performance of a machine learning algorithm is to use a &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;confusion matrix&lt;/a&gt;. This is a table with two rows and two columns that displays the number of true positives, false positives, false negatives and true negatives.&lt;/p&gt;
+
+&lt;p&gt;This Jupyter &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/07_Precision_and_Recall.ipynb&#34;&gt;notebook&lt;/a&gt; contains all the code used to plot the charts.&lt;/p&gt;
+
+&lt;p&gt;The table below shows an example confusion matrix for a hypothetical test for a rare disease where only 2 people of out 100 have the disease. This is an unbalanced data set as a much larger number, 98 out of 100 do not have the disease. The first named row has cases of people who have the disease and the second named row has cases of people who do not have the disease. The first named column has people who test positive and the second named column has people who test negative.&lt;/p&gt;
+
+&lt;p&gt;This leads to four numeric cell with the top left containing true positive counts, the bottom left having false positive, the top right having false negative and the bottom right with true negative counts.&lt;/p&gt;
+
+&lt;p&gt;A simple way to create a very accurate test for this unbalanced example is to just assume everyone tests negative for the disease. This misses out on all the people who do actually have the disease and results in two false negative cases. However it correctly predicts 98 true negative cases. This results in a 98% accurate test. But this test cannot distinguish between people who have a disease and people who don&amp;rsquo;t. Accuracy may not be a useful measure of the goodness of the test.&lt;/p&gt;
+
+&lt;p&gt;Two useful measures are precision and recall: Precision is a measure of how many of the selected items are relevant and recall is a measure of how many relevant items are selected.&lt;/p&gt;
+
+&lt;p&gt;precision = (true positives)/(true positives + false positives)&lt;/p&gt;
+
+&lt;p&gt;recall = (True positives)/positives&lt;/p&gt;
+
+&lt;p&gt;In the example below the precision is undefined while the recall is zero.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;predicted condition positive&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;predicted condition negative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;true condition positive&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;true condition negative&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;98&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An alternative test for the same rare disease where 2 out of 100 have the disease is show below. Now there is 1 true positive, 2 false positives, 1 false negative and 96 true negatives.&lt;/p&gt;
+
+&lt;p&gt;This test has a lower accuracy as it has correct predicted 97 out of 100 cases, lower than the previous test. This test also has a defined precision of 0.333333 and a recall of 0.5&lt;/p&gt;
+
+&lt;p&gt;This test correctly identifies 1 out of the 2 people who have the disease.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;predicted condition positive&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;predicted condition negative&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;true condition positive&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;true condition negative&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;96&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;To demonstrate the use of accuracy, precision and recall when measuring the peformance of a classifier, we use the &amp;ldquo;Wisconsin Breast Cancer&amp;rdquo; data set.&lt;/p&gt;
+
+&lt;p&gt;This data set has 569 samples of which 357 are benign and 212 are malignant&lt;/p&gt;
+
+&lt;p&gt;We predict whether the cancer is benign or malignant using ten factors: radius, texture, perimeter, area, smoothness, compactness, concavity, concave points, symmetry and fractal dimension.&lt;/p&gt;
+
+&lt;p&gt;We compare four classifiers: logistic regression, support vector, decision tree and random forests on three different measures, accuracy, precision and recall. The decision tree and random forest classifiers are so good that they correctly classify 100% of the samples in this data set.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;classifier&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;accuracy&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;precision&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;recall&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;logistic regression&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.929701&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.927224&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.963585&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;support vector (radial basis)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.987698&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.980769&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;decision tree&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;random forest&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;However the performance of a classifier on the training data is not necessarily
+a good indication of how well it will do on data it has not seen. In future
+posts the classifiers will be tested on new data.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>K nearest neighbors using Scikit-learn</title>
