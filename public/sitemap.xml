@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://gavinln.github.io/blog-site/</loc>
-    <lastmod>2016-04-10T22:40:36-07:00</lastmod>
+    <lastmod>2016-04-14T20:35:27-07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gavinln.github.io/blog-site/post/cross_validation/</loc>
+    <lastmod>2016-04-14T20:35:27-07:00</lastmod>
   </url>
   
   <url>

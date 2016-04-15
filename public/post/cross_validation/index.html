@@ -1,0 +1,122 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.15" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Cross validation &middot; Human Learning Machine Learning </title>
+
+  
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/poole.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/syntax.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://gavinln.github.io/blog-site/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://gavinln.github.io/blog-site/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Human Learning Machine Learning" />
+</head>
+
+	<body class="theme-base-0b">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://gavinln.github.io/blog-site/"><h1>Human Learning Machine Learning</h1></a>
+      <p class="lead">
+	Posts about Machine learning.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://gavinln.github.io/blog-site/">Home</a> </li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/accuracy-precision-recall/"> Accuracy, precision, recall for machine learning </a></li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/cross_validation/"> Cross validation </a></li>
+      
+      <li><a href="http://gavinln.github.io/blog-site/post">Index</a> </li>
+    </ul>
+
+    <p>&copy; 2016. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Cross validation</h1>
+			  <span class="post-date">Thu, Apr 14, 2016</span>
+			      <p><a href="https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29">Cross-validation</a> is a technique used to assess how a statistical analysis will generalize to an independent data set.</p>
+
+<p>When creating a predictive model, the model is trained using a dataset called the training dataset. The accuracy of the trained model is then tested on another unknown dataset called the testing dataset. The process is called cross-validation.</p>
+
+<p><a href="http://scikit-learn.org/stable/modules/cross_validation.html">Scikit</a> learn makes it easy to use multiple methods for cross validation. A basic approach is called k-fold cross validation. The dataset is split into k smaller sets, where 1 of the sets is used to validate the model while the remaining are used to train the model. The <a href="http://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter">peformance measures</a> reported by the k-fold cross-validations are the average of the values computed by choosing a different set for the cross-validation and using the remaining for training.</p>
+
+<p>This Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/08_Cross_validation.ipynb">notebook</a> contains all the code used to plot the charts.</p>
+
+<p>The &ldquo;Wisconsin Breast Cancer&rdquo; dataset is used to demonstrate cross-validation. This data set has 569 samples of which 357 are benign and 212 are malignant. Ten factors are used to predict breast cancer.</p>
+
+<p>In addition to precision and recall, the <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> is calculated. The F1 score is the harmonic mean and equally weights precision and recall. A F1 score reaches its highest value at 1 and lowest value at 0.</p>
+
+<p>The four classifiers: logistic regression, support vector, decision tree and random forests are compared on the cross-validation scores. They perform much worse on the test dataset as compared to the training dataset. Compare the results with those in the <a href="http://gavinln.github.io/blog-site/post/accuracy-precision-recall/">previous post</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th>classifier</th>
+<th>accuracy</th>
+<th>precision</th>
+<th>recall</th>
+<th>f1_score</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>logistic regression</td>
+<td>0.926186</td>
+<td>0.938719</td>
+<td>0.943978</td>
+<td>0.941341</td>
+</tr>
+
+<tr>
+<td>support vector (radial basis)</td>
+<td>0.717047</td>
+<td>0.704167</td>
+<td>0.946779</td>
+<td>0.807646</td>
+</tr>
+
+<tr>
+<td>decision tree</td>
+<td>0.905097</td>
+<td>0.922006</td>
+<td>0.927171</td>
+<td>0.924581</td>
+</tr>
+
+<tr>
+<td>random forest</td>
+<td>0.947276</td>
+<td>0.955432</td>
+<td>0.960784</td>
+<td>0.958101</td>
+</tr>
+</tbody>
+</table>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>
