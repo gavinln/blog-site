@@ -477,6 +477,393 @@ species are shown in a scatter plot in different colors.</p>
 
   </div>
   
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/scikit-svm/">
+        Support vector machines with Scikit learn
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Mar 6, 2016</span>
+
+    <p><a href="https://en.wikipedia.org/wiki/Support_vector_machine">Support vector machines</a> are supervised learning models used for
+classification and regression. For a classifier the data is represented as
+points in space and a SVM classifier (SVC) separates the classes by a gap that
+is as wide as possible. SVM algorithms are known as maximum margin classifiers.</p>
+
+<p>To illustrate the SVC algorithm we generate random points in two dimensions
+arranged in two clusters. This is illustrated in a Jupyter (IPython) notebook
+in this <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/03_Support_vector_machines.ipynb">repository</a>.</p>
+
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>X, y <span style="color: #666666">=</span> make_blobs(n_samples<span style="color: #666666">=50</span>, centers<span style="color: #666666">=2</span>, random_state<span style="color: #666666">=0</span>, cluster_std<span style="color: #666666">=0.60</span>)
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.svm</span> <span style="color: #008000; font-weight: bold">import</span> SVC
+clf <span style="color: #666666">=</span> SVC(kernel<span style="color: #666666">=</span><span style="color: #BA2121">&#39;linear&#39;</span>)
+clf<span style="color: #666666">.</span>fit(X, y)
+</pre></div>
+
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/svm/linear_boundaries_two_clusters.png" width="500" />
+    
+    
+    <figcaption>
+        <h4>Two lines separating two clusters</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>Multiple lines can be drawn to separate the clusters. The black line is
+preferred to the red line as there is a larger margin between it and the
+nearest points.</p>
+
+<p>Some of the points nearest the boundary are known as support vectors. They
+margins and the support vectors are plotted below.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/svm/SVM_decision_function-margin-support_vectors.png" width="500" />
+    
+    
+    <figcaption>
+        <h4>Support vectors</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+<p>Support vector classifiers are linear classifiers. For datasets that are not
+linearly separable they do a poor job.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/svm/SVM-non_linearly_separable_data.png" width="500" />
+    
+    
+    <figcaption>
+        <h4>Non-linearly separable data</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+<p>To create non-linear boundaries we could convert this two dimensional data set
+to higher dimensions. For example we could add the distance of the points from
+the origin as the third dimension. The two clusters will then be easily
+separable.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/svm/SVM-with_radial_basis_functions.png" width="500" />
+    
+    
+    <figcaption>
+        <h4>Radial basis functions for SVC</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+<p>Another example with non-linearly separable data.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/svm/radial_basis_functions-non_linearly_separable_data.png" width="500" />
+    
+    
+    <figcaption>
+        <h4>Radial basis functions for SVC</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/scikit-logistic_reg-iris/">
+        Logistic regression on the Iris data set
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Feb 29, 2016</span>
+
+    <p>The <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris data set</a> has four features for Iris flower.</p>
+
+<ul>
+<li>sepal length</li>
+<li>sepal width</li>
+<li>petal length</li>
+<li>petal width</li>
+</ul>
+
+<p>Using a three class <a href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html">logistic regression</a> the four features can be used to
+classify the flowers into three species (Iris setosa, Iris virginica,
+Iris versicolor).</p>
+
+<p>Using this Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/02_Iris_dataset_logistic_regression.ipynb">notebook</a> combinations of two features we are used to
+classify the species. The mis-predicted values are shown below.</p>
+
+<table>
+<thead>
+<tr>
+<th>measure 1</th>
+<th>measure 2</th>
+<th>incorrect predictions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sepal length</td>
+<td>sepal width</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal length</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal width</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal length</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal width</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>petal length</td>
+<td>petal width</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>The previous <a href="http://gavinln.github.io/blog-site/post/scikit-pca-iris/">post</a> shows that some combinations of
+features are easier to use to separate the species than others.</p>
+
+<p>Logistic regression can also be used on the two principal components and
+mis-predicts five specimens.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Iris plot with mis-predicted items</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>A mesh when drawn over the plot shows the three classes of the logistic
+regression.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Iris plot - logistic regression</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/scikit-pca-iris/">
+        PCA with Scikit learn on the Iris data set
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Feb 23, 2016</span>
+
+    <p><a href="http://scikit-learn.org/">Scikit learn</a> has multiple data sets included with the library. One of the most
+well known data sets is the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris data set</a> introduced by Ronald Fisher.</p>
+
+<p>Four features were measured from each sample: the length and the width of the
+sepals and petals, in centimetres. Sepals are usually green and typically
+function as protection for the flower in bud, and often as support for the
+petals when in bloom. Based on the combination of these four features the
+goal is to distinguish between three species of Iris
+(Iris setosa, Iris virginica and Iris versicolor).</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/iris_setosa.jpg" width="300" />
+    
+    
+    <figcaption>
+        <h4>Iris setosa</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/iris_virginica.jpg" width="300" />
+    
+    
+    <figcaption>
+        <h4>Iris virginica</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/iris_versicolor.jpg" width="300" />
+    
+    
+    <figcaption>
+        <h4>Iris versicolor</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+<p>The data is shown in a Jupyter (IPython) notebook in this <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/01_Iris_dataset_PCA.ipynb">repository</a>.</p>
+
+<p>By converting the scikit-learn data into a <a href="http://pandas.pydata.org/">pandas</a> dataframe it can easily be
+plotted using the <a href="http://stanford.edu/~mwaskom/software/seaborn/">seaborn</a> library.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-pairplot.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Seaborn iris plot</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+<p>Using principal component analysis (PCA) the four dimensional data set can be
+converted into a two dimensional data set by only choosing the first two
+principal components.</p>
+
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.decomposition</span> <span style="color: #008000; font-weight: bold">import</span> PCA
+pca <span style="color: #666666">=</span> PCA(n_components<span style="color: #666666">=2</span>)
+iris_proj <span style="color: #666666">=</span> pca<span style="color: #666666">.</span>fit_transform(iris[<span style="color: #BA2121">&#39;data&#39;</span>])
+<span style="color: #008000; font-weight: bold">print</span>(iris[<span style="color: #BA2121">&#39;data&#39;</span>]<span style="color: #666666">.</span>shape)
+<span style="color: #008000; font-weight: bold">print</span>(iris_proj<span style="color: #666666">.</span>shape)
+</pre></div>
+</p>
+
+<p>The first principal component explains 92.46% of the variance and the second
+explains 5.30% of the variance.</p>
+
+<p>
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>First two principal components of the Iris data</h4>
+        
+    </figcaption>
+    
+</figure>
+</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/welcome/">
+        Welcome
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Feb 20, 2016</span>
+
+    
+
+<p>This web site is created using <a href="https://gohugo.io/">Hugo</a> a static web site generator.</p>
+
+<p><img src="http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png" width="200" height="226"/></p>
+
+<h2 id="hyde-theme:2cc7dc244eed4480e8b46c91e911e96b">Hyde Theme</h2>
+
+<p>Hyde is an elegant open source and mobile first theme for Hugo. <a href="https://github.com/spf13/hyde">Hyde</a> a
+two column theme that was ported from the theme of the same name made for
+<a href="https://jekyllrb.com/">Jekyll</a> another static web site generator writen in <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
+
+<h2 id="making-a-post-using-hugo:2cc7dc244eed4480e8b46c91e911e96b">Making a post using Hugo</h2>
+
+<p>The content in Hugo is organized in sections. To make a new content file called
+<code>welcome.html</code> in the section <code>post</code> run the following.</p>
+
+<pre><code class="language-bash">hugo new post/welcome.md
+</code></pre>
+
+<h2 id="adding-images:2cc7dc244eed4480e8b46c91e911e96b">Adding images</h2>
+
+<p>To add an image to a markdown document you can use the following three options.</p>
+
+<ol>
+<li><p>Markdown syntax</p>
+
+<pre><code>![Hugo](/img/hugo/hugo-logo_small.png)
+</code></pre></li>
+
+<li><p>HTML syntax</p>
+
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #008000; font-weight: bold">img</span> <span style="color: #7D9029">src</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/img/hugo/hugo-logo.png&quot;</span> <span style="color: #7D9029">width</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;200&quot;</span> <span style="color: #7D9029">height</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;226&quot;</span>/&gt;
+</pre></div>
+</li>
+
+<li><p>Hugo <a href="https://gohugo.io/extras/shortcodes/">shortcodes</a></p>
+
+<p>{{&lt;figure src=&ldquo;/img/hugo/hugo-logo.png&rdquo; width=&ldquo;200&rdquo; height=&ldquo;226&rdquo;&gt;}}</p></li>
+</ol>
+
+  </div>
+  
 </div>
 </div>
 
