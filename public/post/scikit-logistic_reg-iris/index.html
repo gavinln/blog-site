@@ -1,0 +1,162 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.16" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Logistic regression on the Iris data set &middot; Human Learning Machine Learning </title>
+
+  
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/poole.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/syntax.css">
+  <link rel="stylesheet" href="http://gavinln.github.io/blog-site/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://gavinln.github.io/blog-site/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://gavinln.github.io/blog-site/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Human Learning Machine Learning" />
+</head>
+
+	<body class="theme-base-0b">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://gavinln.github.io/blog-site/"><h1>Human Learning Machine Learning</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://gavinln.github.io/blog-site/">Home</a> </li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/accuracy-precision-recall/"> Accuracy, precision, recall for machine learning </a></li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/cross_validation/"> Cross validation </a></li>
+      
+    </ul>
+
+    <p>&copy; 2016. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Logistic regression on the Iris data set</h1>
+			  <span class="post-date">Mon, Feb 29, 2016</span>
+			      <p>The <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris data set</a> has four features for Iris flower.</p>
+
+<ul>
+<li>sepal length</li>
+<li>sepal width</li>
+<li>petal length</li>
+<li>petal width</li>
+</ul>
+
+<p>Using a three class <a href="http://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html">logistic regression</a> the four features can be used to
+classify the flowers into three species (Iris setosa, Iris virginica,
+Iris versicolor).</p>
+
+<p>Using this Jupyter <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/02_Iris_dataset_logistic_regression.ipynb">notebook</a> combinations of two features we are used to
+classify the species. The mis-predicted values are shown below.</p>
+
+<table>
+<thead>
+<tr>
+<th>measure 1</th>
+<th>measure 2</th>
+<th>incorrect predictions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sepal length</td>
+<td>sepal width</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal length</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>sepal length</td>
+<td>petal width</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal length</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>sepal width</td>
+<td>petal width</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>petal length</td>
+<td>petal width</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+
+<p>The previous <a href="http://gavinln.github.io/blog-site/post/scikit-pca-iris/">post</a> shows that some combinations of
+features are easier to use to separate the species than others.</p>
+
+<p>Logistic regression can also be used on the two principal components and
+mis-predicts five specimens.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components-mis-predicted.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Iris plot with mis-predicted items</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>A mesh when drawn over the plot shows the three classes of the logistic
+regression.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" width="800" />
+    
+    
+    <figcaption>
+        <h4>Iris plot - logistic regression</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>
