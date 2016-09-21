@@ -10,4 +10,8 @@ theme: "hyde"
 
 params:
     themeColor: "theme-base-0b"
+
+site:
+    params:
+        description: "A human learning machine learning"
 ...
