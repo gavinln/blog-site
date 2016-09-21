@@ -313,7 +313,7 @@ of the k-nearest neighbor algorithm for classification.&lt;/p&gt;
 
 &lt;p&gt;A similar plot shows a Random Forest Classifier with 500 trees each time used to select various sub-samples of the dataset. This controls over-fitting.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/random_forests/random_forests-iris-multiple_subsets.png&#34; width=&#34;600&#34; /&gt;
@@ -325,7 +325,7 @@ of the k-nearest neighbor algorithm for classification.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -406,14 +406,14 @@ species are shown in a scatter plot in different colors.&lt;/p&gt;
 
 &lt;p&gt;Finally we use a decision tree without limiting the depth. It classifies all the flowers correctly.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/decision_trees/decision_trees-unlimited_depth.png&#34; width=&#34;600&#34; /&gt;
     
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -432,11 +432,11 @@ is as wide as possible. SVM algorithms are known as maximum margin classifiers.&
 arranged in two clusters. This is illustrated in a Jupyter (IPython) notebook
 in this &lt;a href=&#34;https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/03_Support_vector_machines.ipynb&#34;&gt;repository&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;X, y &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; make_blobs(n_samples&lt;span style=&#34;color: #666666&#34;&gt;=50&lt;/span&gt;, centers&lt;span style=&#34;color: #666666&#34;&gt;=2&lt;/span&gt;, random_state&lt;span style=&#34;color: #666666&#34;&gt;=0&lt;/span&gt;, cluster_std&lt;span style=&#34;color: #666666&#34;&gt;=0.60&lt;/span&gt;)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sklearn.svm&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; SVC
-clf &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; SVC(kernel&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;linear&amp;#39;&lt;/span&gt;)
-clf&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fit(X, y)
-&lt;/pre&gt;&lt;/div&gt;
+
+X, y = make_blobs(n_samples=50, centers=2, random_state=0, cluster_std=0.60)
+from sklearn.svm import SVC
+clf = SVC(kernel=&#39;linear&#39;)
+clf.fit(X, y)
 
 
 
@@ -460,7 +460,7 @@ nearest points.&lt;/p&gt;
 &lt;p&gt;Some of the points nearest the boundary are known as support vectors. They
 margins and the support vectors are plotted below.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM_decision_function-margin-support_vectors.png&#34; width=&#34;500&#34; /&gt;
@@ -472,12 +472,12 @@ margins and the support vectors are plotted below.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Support vector classifiers are linear classifiers. For datasets that are not
 linearly separable they do a poor job.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM-non_linearly_separable_data.png&#34; width=&#34;500&#34; /&gt;
@@ -489,14 +489,14 @@ linearly separable they do a poor job.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;To create non-linear boundaries we could convert this two dimensional data set
 to higher dimensions. For example we could add the distance of the points from
 the origin as the third dimension. The two clusters will then be easily
 separable.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/SVM-with_radial_basis_functions.png&#34; width=&#34;500&#34; /&gt;
@@ -508,11 +508,11 @@ separable.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Another example with non-linearly separable data.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/svm/radial_basis_functions-non_linearly_separable_data.png&#34; width=&#34;500&#34; /&gt;
@@ -524,7 +524,7 @@ separable.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -621,7 +621,7 @@ mis-predicts five specimens.&lt;/p&gt;
 &lt;p&gt;A mesh when drawn over the plot shows the three classes of the logistic
 regression.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png&#34; width=&#34;800&#34; /&gt;
@@ -633,7 +633,7 @@ regression.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -698,7 +698,7 @@ goal is to distinguish between three species of Iris
 &lt;p&gt;By converting the scikit-learn data into a &lt;a href=&#34;http://pandas.pydata.org/&#34;&gt;pandas&lt;/a&gt; dataframe it can easily be
 plotted using the &lt;a href=&#34;http://stanford.edu/~mwaskom/software/seaborn/&#34;&gt;seaborn&lt;/a&gt; library.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-pairplot.png&#34; width=&#34;800&#34; /&gt;
@@ -710,24 +710,24 @@ plotted using the &lt;a href=&#34;http://stanford.edu/~mwaskom/software/seaborn/
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Using principal component analysis (PCA) the four dimensional data set can be
 converted into a two dimensional data set by only choosing the first two
 principal components.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sklearn.decomposition&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; PCA
-pca &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; PCA(n_components&lt;span style=&#34;color: #666666&#34;&gt;=2&lt;/span&gt;)
-iris_proj &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; pca&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fit_transform(iris[&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;])
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt;(iris[&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;shape)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt;(iris_proj&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;shape)
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+iris_proj = pca.fit_transform(iris[&#39;data&#39;])
+print(iris[&#39;data&#39;].shape)
+print(iris_proj.shape)
+
 
 &lt;p&gt;The first principal component explains 92.46% of the variance and the second
 explains 5.30% of the variance.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components.png&#34; width=&#34;800&#34; /&gt;
@@ -739,7 +739,7 @@ explains 5.30% of the variance.&lt;/p&gt;
     &lt;/figcaption&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -755,13 +755,13 @@ explains 5.30% of the variance.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png&#34; width=&#34;200&#34; height=&#34;226&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;hyde-theme:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Hyde Theme&lt;/h2&gt;
+&lt;h2 id=&#34;hyde-theme&#34;&gt;Hyde Theme&lt;/h2&gt;
 
 &lt;p&gt;Hyde is an elegant open source and mobile first theme for Hugo. &lt;a href=&#34;https://github.com/spf13/hyde&#34;&gt;Hyde&lt;/a&gt; a
 two column theme that was ported from the theme of the same name made for
 &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; another static web site generator writen in &lt;a href=&#34;https://www.ruby-lang.org/&#34;&gt;Ruby&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;making-a-post-using-hugo:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Making a post using Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;making-a-post-using-hugo&#34;&gt;Making a post using Hugo&lt;/h2&gt;
 
 &lt;p&gt;The content in Hugo is organized in sections. To make a new content file called
 &lt;code&gt;welcome.html&lt;/code&gt; in the section &lt;code&gt;post&lt;/code&gt; run the following.&lt;/p&gt;
@@ -769,7 +769,7 @@ two column theme that was ported from the theme of the same name made for
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new post/welcome.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;adding-images:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;Adding images&lt;/h2&gt;
+&lt;h2 id=&#34;adding-images&#34;&gt;Adding images&lt;/h2&gt;
 
 &lt;p&gt;To add an image to a markdown document you can use the following three options.&lt;/p&gt;
 
@@ -781,9 +781,7 @@ two column theme that was ported from the theme of the same name made for
 
 &lt;li&gt;&lt;p&gt;HTML syntax&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;/img/hugo/hugo-logo.png&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #7D9029&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;226&amp;quot;&lt;/span&gt;/&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
+&lt;img src=&#34;http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png&#34; width=&#34;200&#34; height=&#34;226&#34;/&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Hugo &lt;a href=&#34;https://gohugo.io/extras/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;&lt;/p&gt;
 
