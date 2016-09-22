@@ -6,8 +6,136 @@
     <description>Recent content in Posts on Human Learning Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Apr 2016 20:35:27 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 21 Sep 2016 20:30:53 -0700</lastBuildDate>
     <atom:link href="http://gavinln.github.io/blog-site/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Scaling input data</title>
+      <link>http://gavinln.github.io/blog-site/post/scaling-input-data/</link>
+      <pubDate>Wed, 21 Sep 2016 20:30:53 -0700</pubDate>
+      
+      <guid>http://gavinln.github.io/blog-site/post/scaling-input-data/</guid>
+      <description>&lt;p&gt;Some machine learning algorithms in the sklearn library are affected by data measured using different scales. For example if one measure is in centimeters (one hundreth of a meter) and another is in micrometers (one millionth of a meter) the results may not be optimal.&lt;/p&gt;
+
+&lt;p&gt;Sklearn has scaling functions in the &lt;a href=&#34;http://scikit-learn.org/stable/modules/preprocessing.html&#34;&gt;preprocessing&lt;/a&gt; module&lt;/p&gt;
+
+&lt;p&gt;Load the &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html&#34;&gt;Iris&lt;/a&gt; dataset. It has three kinds of Irises with each Iris species stored in 50 consecutive rows. Loading the second and third Iris species stored from row 50 and above create a subset of the data.&lt;/p&gt;
+
+&lt;p&gt;Display the two species &lt;em&gt;versicolor&lt;/em&gt; and &lt;em&gt;virginica&lt;/em&gt; with two axis: sepal length and sepal width. The sepal length is in centimeters and the sepal width is in micrometers.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/scaling_input_data/iris-species-different-scales.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Iris species: different scales on x and y axes&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Using the &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html&#34;&gt;scale&lt;/a&gt; function in sklearn the measures are converted to have a mean of zero and variance of one.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;measure&lt;/th&gt;
+&lt;th&gt;sepal length&lt;/th&gt;
+&lt;th&gt;sepal width&lt;/th&gt;
+&lt;th&gt;species&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;count&lt;/td&gt;
+&lt;td&gt;1.000000e+02&lt;/td&gt;
+&lt;td&gt;1.000000e+02&lt;/td&gt;
+&lt;td&gt;100.0000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;mean&lt;/td&gt;
+&lt;td&gt;3.288481e-15&lt;/td&gt;
+&lt;td&gt;4.496403e-17&lt;/td&gt;
+&lt;td&gt;1.500000&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;stdev&lt;/td&gt;
+&lt;td&gt;1.005038e+00&lt;/td&gt;
+&lt;td&gt;1.005038e+00&lt;/td&gt;
+&lt;td&gt;0.502519&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/scaling_input_data/iris-species-normalized-axes.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Iris species: normalized axes&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Using logistic regression and a decision tree classifier with the original data
+and normalized data the results are in the table below.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;classifier&lt;/th&gt;
+&lt;th&gt;accuracy&lt;/th&gt;
+&lt;th&gt;precision&lt;/th&gt;
+&lt;th&gt;recall&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Logistic regression: different scales&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;0.578947&lt;/td&gt;
+&lt;td&gt;0.44&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Logistic regression: normalized data&lt;/td&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;0.745098&lt;/td&gt;
+&lt;td&gt;0.76&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Decision tree: different scales&lt;/td&gt;
+&lt;td&gt;0.88&lt;/td&gt;
+&lt;td&gt;0.816667&lt;/td&gt;
+&lt;td&gt;0.98&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Decision tree: normalized data&lt;/td&gt;
+&lt;td&gt;0.88&lt;/td&gt;
+&lt;td&gt;0.816667&lt;/td&gt;
+&lt;td&gt;0.98&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The logistic regression method improves when using normalized data however the
+decision tree method does equally well with the original data and the
+normalized data.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cross validation</title>

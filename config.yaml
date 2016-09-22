@@ -10,5 +10,5 @@ theme: "hyde"
 
 params:
     themeColor: "theme-base-0b"
-    description: "A human learning machine learning"
+    description: " "
 ...
