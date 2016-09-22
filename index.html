@@ -31,7 +31,7 @@
     <div class="sidebar-about">
       <a href="http://gavinln.github.io/blog-site/"><h1>Human Learning Machine Learning</h1></a>
       <p class="lead">
-       A human learning machine learning 
+         
       </p>
     </div>
 
@@ -41,6 +41,8 @@
         <li><a href="http://gavinln.github.io/blog-site/post/accuracy-precision-recall/"> Accuracy, precision, recall for machine learning </a></li>
       
         <li><a href="http://gavinln.github.io/blog-site/post/cross_validation/"> Cross validation </a></li>
+      
+        <li><a href="http://gavinln.github.io/blog-site/post/scaling-input-data/"> Scaling input data </a></li>
       
     </ul>
 
@@ -53,6 +55,137 @@
 <div class="posts">
 
       
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/scaling-input-data/">
+        Scaling input data
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Sep 21, 2016</span>
+
+    <p>Some machine learning algorithms in the sklearn library are affected by data measured using different scales. For example if one measure is in centimeters (one hundreth of a meter) and another is in micrometers (one millionth of a meter) the results may not be optimal.</p>
+
+<p>Sklearn has scaling functions in the <a href="http://scikit-learn.org/stable/modules/preprocessing.html">preprocessing</a> module</p>
+
+<p>Load the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html">Iris</a> dataset. It has three kinds of Irises with each Iris species stored in 50 consecutive rows. Loading the second and third Iris species stored from row 50 and above create a subset of the data.</p>
+
+<p>Display the two species <em>versicolor</em> and <em>virginica</em> with two axis: sepal length and sepal width. The sepal length is in centimeters and the sepal width is in micrometers.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/scaling_input_data/iris-species-different-scales.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Iris species: different scales on x and y axes</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>Using the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html">scale</a> function in sklearn the measures are converted to have a mean of zero and variance of one.</p>
+
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>sepal length</th>
+<th>sepal width</th>
+<th>species</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>count</td>
+<td>1.000000e+02</td>
+<td>1.000000e+02</td>
+<td>100.0000</td>
+</tr>
+
+<tr>
+<td>mean</td>
+<td>3.288481e-15</td>
+<td>4.496403e-17</td>
+<td>1.500000</td>
+</tr>
+
+<tr>
+<td>stdev</td>
+<td>1.005038e+00</td>
+<td>1.005038e+00</td>
+<td>0.502519</td>
+</tr>
+</tbody>
+</table>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/scaling_input_data/iris-species-normalized-axes.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Iris species: normalized axes</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>Using logistic regression and a decision tree classifier with the original data
+and normalized data the results are in the table below.</p>
+
+<table>
+<thead>
+<tr>
+<th>classifier</th>
+<th>accuracy</th>
+<th>precision</th>
+<th>recall</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Logistic regression: different scales</td>
+<td>0.56</td>
+<td>0.578947</td>
+<td>0.44</td>
+</tr>
+
+<tr>
+<td>Logistic regression: normalized data</td>
+<td>0.75</td>
+<td>0.745098</td>
+<td>0.76</td>
+</tr>
+
+<tr>
+<td>Decision tree: different scales</td>
+<td>0.88</td>
+<td>0.816667</td>
+<td>0.98</td>
+</tr>
+
+<tr>
+<td>Decision tree: normalized data</td>
+<td>0.88</td>
+<td>0.816667</td>
+<td>0.98</td>
+</tr>
+</tbody>
+</table>
+
+<p>The logistic regression method improves when using normalized data however the
+decision tree method does equally well with the original data and the
+normalized data.</p>
+
+  </div>
+  
   <div class="post">
     <h1 class="post-title">
       <a href="http://gavinln.github.io/blog-site/post/cross_validation/">
