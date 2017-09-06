@@ -2,6 +2,9 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+git config --global user.name "Gavin Noronha"
+git config --global user.email gavinln@hotmail.com
+
 # Build the project.
 hugo
 

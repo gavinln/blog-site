@@ -166,3 +166,29 @@ The blog will be available at <http://gavinln.github.io/blog-site>
     hugo new post/scikit-pca-iris.md
     ```
 
+## Deploy the web site
+
+1. Start the ssh agent
+
+    ```
+    start-ssh-agent.cmd
+    ```
+
+2. Connect to the virtual machine
+
+    ```
+    vagrant ssh
+    ```
+
+3. Change to the blog root
+
+    ```
+    cd /vagrant
+    ```
+
+4. Create a new post
+
+    ```
+    ./deploy.sh
+    ```
+
