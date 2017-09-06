@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.16" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -41,11 +41,13 @@
       
         <li><a href="http://gavinln.github.io/blog-site/post/cross_validation/"> Cross validation </a></li>
       
+        <li><a href="http://gavinln.github.io/blog-site/post/gradient-boosting-classifier/"> Gradient boosting classifier </a></li>
+      
         <li><a href="http://gavinln.github.io/blog-site/post/scaling-input-data/"> Scaling input data </a></li>
       
     </ul>
 
-    <p>&copy; 2016. All rights reserved. </p>
+    <p>&copy; 2017. All rights reserved. </p>
   </div>
 </div>
 
@@ -63,11 +65,11 @@ is as wide as possible. SVM algorithms are known as maximum margin classifiers.<
 arranged in two clusters. This is illustrated in a Jupyter (IPython) notebook
 in this <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/03_Support_vector_machines.ipynb">repository</a>.</p>
 
-
-X, y = make_blobs(n_samples=50, centers=2, random_state=0, cluster_std=0.60)
-from sklearn.svm import SVC
-clf = SVC(kernel='linear')
-clf.fit(X, y)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>X, y <span style="color: #666666">=</span> make_blobs(n_samples<span style="color: #666666">=50</span>, centers<span style="color: #666666">=2</span>, random_state<span style="color: #666666">=0</span>, cluster_std<span style="color: #666666">=0.60</span>)
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.svm</span> <span style="color: #008000; font-weight: bold">import</span> SVC
+clf <span style="color: #666666">=</span> SVC(kernel<span style="color: #666666">=</span><span style="color: #BA2121">&#39;linear&#39;</span>)
+clf<span style="color: #666666">.</span>fit(X, y)
+</pre></div>
 
 
 
@@ -91,7 +93,7 @@ nearest points.</p>
 <p>Some of the points nearest the boundary are known as support vectors. They
 margins and the support vectors are plotted below.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM_decision_function-margin-support_vectors.png" width="500" />
@@ -103,12 +105,12 @@ margins and the support vectors are plotted below.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>Support vector classifiers are linear classifiers. For datasets that are not
 linearly separable they do a poor job.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM-non_linearly_separable_data.png" width="500" />
@@ -120,14 +122,14 @@ linearly separable they do a poor job.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>To create non-linear boundaries we could convert this two dimensional data set
 to higher dimensions. For example we could add the distance of the points from
 the origin as the third dimension. The two clusters will then be easily
 separable.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM-with_radial_basis_functions.png" width="500" />
@@ -139,11 +141,11 @@ separable.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>Another example with non-linearly separable data.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/radial_basis_functions-non_linearly_separable_data.png" width="500" />
@@ -155,7 +157,7 @@ separable.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 			</div>
 
