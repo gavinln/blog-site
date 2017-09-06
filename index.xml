@@ -22,6 +22,170 @@ classification problems which produces a prediction model in the form of an
 ensemble of weak prediciton models, typically descision trees. The model is
 built in stages like other boosting methods where each stage fits the residual
 of the previous stage.&lt;/p&gt;
+
+&lt;p&gt;We first create a synthetic dataset from Hastie et al 2009, example 10.2.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# 5000 rows, 10 columns of X values with each column having&lt;/span&gt;
+&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# a mean 0 and standard deviation 1&lt;/span&gt;
+&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# Approximately half the y values are -1 and the other half are 1&lt;/span&gt;
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sklearn.datasets&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; make_hastie_10_2
+X, y &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; make_hastie_10_2(n_samples&lt;span style=&#34;color: #666666&#34;&gt;=5000&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The table below shows the mean and standard deviations of the 10 columns&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;th&gt;5&lt;/th&gt;
+&lt;th&gt;6&lt;/th&gt;
+&lt;th&gt;7&lt;/th&gt;
+&lt;th&gt;8&lt;/th&gt;
+&lt;th&gt;9&lt;/th&gt;
+&lt;th&gt;10&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;mean&lt;/td&gt;
+&lt;td&gt;-0.01&lt;/td&gt;
+&lt;td&gt;0.01&lt;/td&gt;
+&lt;td&gt;-0.02&lt;/td&gt;
+&lt;td&gt;0.01&lt;/td&gt;
+&lt;td&gt;-0.03&lt;/td&gt;
+&lt;td&gt;0.03&lt;/td&gt;
+&lt;td&gt;-0.01&lt;/td&gt;
+&lt;td&gt;0.00&lt;/td&gt;
+&lt;td&gt;0.00&lt;/td&gt;
+&lt;td&gt;0.00&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;stdev&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.01&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.01&lt;/td&gt;
+&lt;td&gt;1.01&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.01&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;1.01&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;There is significant overlap of the y values as shown by the green and blue
+dots.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://gavinln.github.io/blog-site/img/gradient_boosting_classifier/pair-wise-plot-hastie-10-2.png&#34; width=&#34;600&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Pair wise plot&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;Applying the gradient boosting classifier we can estimate the
+accuracy.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# split the data into training and test samples&lt;/span&gt;
+X_train, X_test, y_train, y_test &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; train_test_split(X, y)
+
+&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# fit estimator&lt;/span&gt;
+est &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; GradientBoostingClassifier(n_estimators&lt;span style=&#34;color: #666666&#34;&gt;=200&lt;/span&gt;, max_depth&lt;span style=&#34;color: #666666&#34;&gt;=3&lt;/span&gt;)
+est&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;fit(X_train, y_train)
+
+&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# predict class labels&lt;/span&gt;
+pred &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; est&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;predict(X_test)
+
+&lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# score on test data (accuracy)&lt;/span&gt;
+acc &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; est&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;score(X_test, y_test)
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;ACC: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%.4f&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; acc)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The importance of each of the 10 features is given below and all features are
+important.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;th&gt;5&lt;/th&gt;
+&lt;th&gt;6&lt;/th&gt;
+&lt;th&gt;7&lt;/th&gt;
+&lt;th&gt;8&lt;/th&gt;
+&lt;th&gt;9&lt;/th&gt;
+&lt;th&gt;10&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;features&lt;/td&gt;
+&lt;td&gt;0.09&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.11&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.11&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;td&gt;0.10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The precision, recall and f1-scores are also high&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;y val&lt;/th&gt;
+&lt;th&gt;precision&lt;/th&gt;
+&lt;th&gt;recall&lt;/th&gt;
+&lt;th&gt;f1-score&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;0.90&lt;/td&gt;
+&lt;td&gt;0.93&lt;/td&gt;
+&lt;td&gt;0.91&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.93&lt;/td&gt;
+&lt;td&gt;0.90&lt;/td&gt;
+&lt;td&gt;0.91&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;All the source code is stored in a &lt;a href=&#34;https://github.com/gavinln/scikit-vm/blob/master/notebooks/10_Gradient_boosting_classifier.ipynb&#34;&gt;notebook&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -64,6 +64,170 @@ ensemble of weak prediciton models, typically descision trees. The model is
 built in stages like other boosting methods where each stage fits the residual
 of the previous stage.</p>
 
+<p>We first create a synthetic dataset from Hastie et al 2009, example 10.2.</p>
+
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># 5000 rows, 10 columns of X values with each column having</span>
+<span style="color: #408080; font-style: italic"># a mean 0 and standard deviation 1</span>
+<span style="color: #408080; font-style: italic"># Approximately half the y values are -1 and the other half are 1</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.datasets</span> <span style="color: #008000; font-weight: bold">import</span> make_hastie_10_2
+X, y <span style="color: #666666">=</span> make_hastie_10_2(n_samples<span style="color: #666666">=5000</span>)
+</pre></div>
+
+
+<p>The table below shows the mean and standard deviations of the 10 columns</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>mean</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>-0.03</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+
+<tr>
+<td>stdev</td>
+<td>1.00</td>
+<td>1.01</td>
+<td>1.00</td>
+<td>1.00</td>
+<td>1.01</td>
+<td>1.01</td>
+<td>1.00</td>
+<td>1.01</td>
+<td>1.00</td>
+<td>1.01</td>
+</tr>
+</tbody>
+</table>
+
+<p>There is significant overlap of the y values as shown by the green and blue
+dots.</p>
+
+
+<figure >
+    
+        <img src="http://gavinln.github.io/blog-site/img/gradient_boosting_classifier/pair-wise-plot-hastie-10-2.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Pair wise plot</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>Applying the gradient boosting classifier we can estimate the
+accuracy.</p>
+
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># split the data into training and test samples</span>
+X_train, X_test, y_train, y_test <span style="color: #666666">=</span> train_test_split(X, y)
+
+<span style="color: #408080; font-style: italic"># fit estimator</span>
+est <span style="color: #666666">=</span> GradientBoostingClassifier(n_estimators<span style="color: #666666">=200</span>, max_depth<span style="color: #666666">=3</span>)
+est<span style="color: #666666">.</span>fit(X_train, y_train)
+
+<span style="color: #408080; font-style: italic"># predict class labels</span>
+pred <span style="color: #666666">=</span> est<span style="color: #666666">.</span>predict(X_test)
+
+<span style="color: #408080; font-style: italic"># score on test data (accuracy)</span>
+acc <span style="color: #666666">=</span> est<span style="color: #666666">.</span>score(X_test, y_test)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;ACC: </span><span style="color: #BB6688; font-weight: bold">%.4f</span><span style="color: #BA2121">&#39;</span> <span style="color: #666666">%</span> acc)
+</pre></div>
+
+
+<p>The importance of each of the 10 features is given below and all features are
+important.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>features</td>
+<td>0.09</td>
+<td>0.10</td>
+<td>0.10</td>
+<td>0.10</td>
+<td>0.11</td>
+<td>0.10</td>
+<td>0.10</td>
+<td>0.11</td>
+<td>0.10</td>
+<td>0.10</td>
+</tr>
+</tbody>
+</table>
+
+<p>The precision, recall and f1-scores are also high</p>
+
+<table>
+<thead>
+<tr>
+<th>y val</th>
+<th>precision</th>
+<th>recall</th>
+<th>f1-score</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-1.0</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.91</td>
+</tr>
+
+<tr>
+<td>1.0</td>
+<td>0.93</td>
+<td>0.90</td>
+<td>0.91</td>
+</tr>
+</tbody>
+</table>
+
+<p>All the source code is stored in a <a href="https://github.com/gavinln/scikit-vm/blob/master/notebooks/10_Gradient_boosting_classifier.ipynb">notebook</a></p>
+
 			</div>
 
 			
