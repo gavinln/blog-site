@@ -3,7 +3,13 @@
   
   <url>
     <loc>http://gavinln.github.io/blog-site/</loc>
-    <lastmod>2016-09-21T20:30:53-07:00</lastmod>
+    <lastmod>2017-09-05T19:15:49-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gavinln.github.io/blog-site/post/gradient-boosting-classifier/</loc>
+    <lastmod>2017-09-05T19:15:49-07:00</lastmod>
   </url>
   
   <url>

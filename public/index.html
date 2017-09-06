@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.16" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -42,11 +42,13 @@
       
         <li><a href="http://gavinln.github.io/blog-site/post/cross_validation/"> Cross validation </a></li>
       
+        <li><a href="http://gavinln.github.io/blog-site/post/gradient-boosting-classifier/"> Gradient boosting classifier </a></li>
+      
         <li><a href="http://gavinln.github.io/blog-site/post/scaling-input-data/"> Scaling input data </a></li>
       
     </ul>
 
-    <p>&copy; 2016. All rights reserved. </p>
+    <p>&copy; 2017. All rights reserved. </p>
   </div>
 </div>
 
@@ -55,6 +57,25 @@
 <div class="posts">
 
       
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://gavinln.github.io/blog-site/post/gradient-boosting-classifier/">
+        Gradient boosting classifier
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Sep 5, 2017</span>
+
+    <p>This post has been adapted from this notebook on <a href="http://nbviewer.jupyter.org/urls/s3.amazonaws.com/datarobotblog/notebooks/gbm-tutorial.ipynb">Gradient boosting</a>.</p>
+
+<p>Gradient boosting is a machine learning technique for regression and
+classification problems which produces a prediction model in the form of an
+ensemble of weak prediciton models, typically descision trees. The model is
+built in stages like other boosting methods where each stage fits the residual
+of the previous stage.</p>
+
+  </div>
+  
   <div class="post">
     <h1 class="post-title">
       <a href="http://gavinln.github.io/blog-site/post/scaling-input-data/">
@@ -502,7 +523,7 @@ of the k-nearest neighbor algorithm for classification.</p>
 
 <p>A similar plot shows a Random Forest Classifier with 500 trees each time used to select various sub-samples of the dataset. This controls over-fitting.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/random_forests/random_forests-iris-multiple_subsets.png" width="600" />
@@ -514,7 +535,7 @@ of the k-nearest neighbor algorithm for classification.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
   </div>
   
@@ -598,14 +619,14 @@ species are shown in a scatter plot in different colors.</p>
 
 <p>Finally we use a decision tree without limiting the depth. It classifies all the flowers correctly.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/decision_trees/decision_trees-unlimited_depth.png" width="600" />
     
     
 </figure>
-
+</p>
 
   </div>
   
@@ -627,11 +648,11 @@ is as wide as possible. SVM algorithms are known as maximum margin classifiers.<
 arranged in two clusters. This is illustrated in a Jupyter (IPython) notebook
 in this <a href="https://github.com/gavinln/stats_py_vm/blob/master/notebooks/scikit-learn/03_Support_vector_machines.ipynb">repository</a>.</p>
 
-
-X, y = make_blobs(n_samples=50, centers=2, random_state=0, cluster_std=0.60)
-from sklearn.svm import SVC
-clf = SVC(kernel='linear')
-clf.fit(X, y)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>X, y <span style="color: #666666">=</span> make_blobs(n_samples<span style="color: #666666">=50</span>, centers<span style="color: #666666">=2</span>, random_state<span style="color: #666666">=0</span>, cluster_std<span style="color: #666666">=0.60</span>)
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.svm</span> <span style="color: #008000; font-weight: bold">import</span> SVC
+clf <span style="color: #666666">=</span> SVC(kernel<span style="color: #666666">=</span><span style="color: #BA2121">&#39;linear&#39;</span>)
+clf<span style="color: #666666">.</span>fit(X, y)
+</pre></div>
 
 
 
@@ -655,7 +676,7 @@ nearest points.</p>
 <p>Some of the points nearest the boundary are known as support vectors. They
 margins and the support vectors are plotted below.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM_decision_function-margin-support_vectors.png" width="500" />
@@ -667,12 +688,12 @@ margins and the support vectors are plotted below.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>Support vector classifiers are linear classifiers. For datasets that are not
 linearly separable they do a poor job.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM-non_linearly_separable_data.png" width="500" />
@@ -684,14 +705,14 @@ linearly separable they do a poor job.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>To create non-linear boundaries we could convert this two dimensional data set
 to higher dimensions. For example we could add the distance of the points from
 the origin as the third dimension. The two clusters will then be easily
 separable.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/SVM-with_radial_basis_functions.png" width="500" />
@@ -703,11 +724,11 @@ separable.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>Another example with non-linearly separable data.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/svm/radial_basis_functions-non_linearly_separable_data.png" width="500" />
@@ -719,7 +740,7 @@ separable.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
   </div>
   
@@ -819,7 +840,7 @@ mis-predicts five specimens.</p>
 <p>A mesh when drawn over the plot shows the three classes of the logistic
 regression.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-principal-components-logistic-reg-mesh.png" width="800" />
@@ -831,7 +852,7 @@ regression.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
   </div>
   
@@ -899,7 +920,7 @@ goal is to distinguish between three species of Iris
 <p>By converting the scikit-learn data into a <a href="http://pandas.pydata.org/">pandas</a> dataframe it can easily be
 plotted using the <a href="http://stanford.edu/~mwaskom/software/seaborn/">seaborn</a> library.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-pairplot.png" width="800" />
@@ -911,24 +932,24 @@ plotted using the <a href="http://stanford.edu/~mwaskom/software/seaborn/">seabo
     </figcaption>
     
 </figure>
-
+</p>
 
 <p>Using principal component analysis (PCA) the four dimensional data set can be
 converted into a two dimensional data set by only choosing the first two
 principal components.</p>
 
-
-from sklearn.decomposition import PCA
-pca = PCA(n_components=2)
-iris_proj = pca.fit_transform(iris['data'])
-print(iris['data'].shape)
-print(iris_proj.shape)
-
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.decomposition</span> <span style="color: #008000; font-weight: bold">import</span> PCA
+pca <span style="color: #666666">=</span> PCA(n_components<span style="color: #666666">=2</span>)
+iris_proj <span style="color: #666666">=</span> pca<span style="color: #666666">.</span>fit_transform(iris[<span style="color: #BA2121">&#39;data&#39;</span>])
+<span style="color: #008000; font-weight: bold">print</span>(iris[<span style="color: #BA2121">&#39;data&#39;</span>]<span style="color: #666666">.</span>shape)
+<span style="color: #008000; font-weight: bold">print</span>(iris_proj<span style="color: #666666">.</span>shape)
+</pre></div>
+</p>
 
 <p>The first principal component explains 92.46% of the variance and the second
 explains 5.30% of the variance.</p>
 
-
+<p>
 <figure >
     
         <img src="http://gavinln.github.io/blog-site/img/irises/seaborn-iris-two-principal-components.png" width="800" />
@@ -940,7 +961,7 @@ explains 5.30% of the variance.</p>
     </figcaption>
     
 </figure>
-
+</p>
 
   </div>
   
@@ -959,13 +980,13 @@ explains 5.30% of the variance.</p>
 
 <p><img src="http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png" width="200" height="226"/></p>
 
-<h2 id="hyde-theme">Hyde Theme</h2>
+<h2 id="hyde-theme:2cc7dc244eed4480e8b46c91e911e96b">Hyde Theme</h2>
 
 <p>Hyde is an elegant open source and mobile first theme for Hugo. <a href="https://github.com/spf13/hyde">Hyde</a> a
 two column theme that was ported from the theme of the same name made for
 <a href="https://jekyllrb.com/">Jekyll</a> another static web site generator writen in <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
-<h2 id="making-a-post-using-hugo">Making a post using Hugo</h2>
+<h2 id="making-a-post-using-hugo:2cc7dc244eed4480e8b46c91e911e96b">Making a post using Hugo</h2>
 
 <p>The content in Hugo is organized in sections. To make a new content file called
 <code>welcome.html</code> in the section <code>post</code> run the following.</p>
@@ -973,7 +994,7 @@ two column theme that was ported from the theme of the same name made for
 <pre><code class="language-bash">hugo new post/welcome.md
 </code></pre>
 
-<h2 id="adding-images">Adding images</h2>
+<h2 id="adding-images:2cc7dc244eed4480e8b46c91e911e96b">Adding images</h2>
 
 <p>To add an image to a markdown document you can use the following three options.</p>
 
@@ -985,7 +1006,9 @@ two column theme that was ported from the theme of the same name made for
 
 <li><p>HTML syntax</p>
 
-<img src="http://gavinln.github.io/blog-site/img/hugo/hugo-logo.png" width="200" height="226"/></li>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #008000; font-weight: bold">img</span> <span style="color: #7D9029">src</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/img/hugo/hugo-logo.png&quot;</span> <span style="color: #7D9029">width</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;200&quot;</span> <span style="color: #7D9029">height</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;226&quot;</span>/&gt;
+</pre></div>
+</li>
 
 <li><p>Hugo <a href="https://gohugo.io/extras/shortcodes/">shortcodes</a></p>
 

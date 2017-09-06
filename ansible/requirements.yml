@@ -1,0 +1,6 @@
+---
+ - src: geerlingguy.ntp
+ - src: angstwad.docker_ubuntu
+   version: v2.5.2
+
+# - src: mongrelion.docker
