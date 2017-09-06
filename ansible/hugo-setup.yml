@@ -2,4 +2,7 @@
 - name: Install hugo
   apt: name=hugo state=installed
 
+- name: Install pygments
+  pip: name=pygments state=present
+
 

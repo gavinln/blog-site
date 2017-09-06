@@ -17,5 +17,4 @@
   tasks:
     - include: init-setup.yml
     - include: cli-setup.yml
-    - include: py3-setup.yml
     - include: hugo-setup.yml
